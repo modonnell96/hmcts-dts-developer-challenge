@@ -5,11 +5,16 @@ A full-stack task management system developed for the HMCTS Digital Technology S
 
 ## Project Overview
 This solution demonstrates modern full-stack development practices with a **Spring Boot REST API backend** and an **Express.js frontend**, designed for managing caseworker tasks in the legal services domain.
-
 The application allows users to create, view, update, and delete tasks, with a focus on clean architecture, usability, and maintainability.
 
 ---
 
+## Repositories
+The project is divided between two repositories:
+- [Frontend repository](https://github.com/modonnell96/dts-developer-challenge-frontend)
+- [Backend repository](https://github.com/modonnell96/dts-developer-challenge-backend)
+
+---
 ## Architecture
 The system follows a **client-server architecture** with clear separation of concerns:
 
@@ -227,7 +232,7 @@ The project also supports **H2** for test scenarios via Spring profile-based con
 - Java 21
 - Node.js (v18+ recommended)
 - Yarn
-- PostgreSQL or H2
+- PostgreSQL or H2 (database configuration as described above)
 
 ### Backend Setup
 
@@ -251,11 +256,6 @@ yarn start:dev
 
 Runs on: `http://localhost:3010`
 
----
-
-## Repositories
-
-This project is split across two repositories:
 
 - **Frontend**  
   <https://github.com/modonnell96/dts-developer-challenge-frontend>
