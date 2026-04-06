@@ -29,6 +29,46 @@ The system follows a **client-server architecture** with clear separation of con
   - Task status (for example `TO_DO` -> `To do`)
   - Dates formatted for display
 
+## Database Configuration
+
+The application uses different databases depending on the runtime context:
+
+- **PostgreSQL** for normal application execution
+- **H2 in-memory database** for tests
+
+### Local Development Database
+
+By default, the application is configured to connect to a local PostgreSQL database.
+
+Configuration in `application.yaml`:
+
+- **URL:** `jdbc:postgresql://localhost:5432/taskdb`
+- **Driver:** `org.postgresql.Driver`
+- **Username:** `postgres`
+- **Password:** `postgres`
+
+To run the application locally, PostgreSQL must be installed and running, and a database named `taskdb` must exist.
+If your local PostgreSQL username or password differs, update the datasource settings in `application.yaml` accordingly.
+
+### Test Database
+
+Tests run using the `test` Spring profile, which is configured in `application-test.yaml` to use an H2 in-memory database.
+This means the test suite can run independently of PostgreSQL.
+
+Test configuration:
+
+- **URL:** `jdbc:h2:mem:taskdb`
+- **Driver:** `org.h2.Driver`
+- **Username:** `test`
+
+### Notes
+
+- Running the application normally requires PostgreSQL setup
+- Running tests does **not** require PostgreSQL
+- The H2 database is used only for test execution, not as the default local development database
+
+If your local setup uses different credentials, update `application.yaml` accordingly.
+The project also supports **H2** for test scenarios via Spring profile-based configuration.
 ---
 
 ## Key Features
