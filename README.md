@@ -255,10 +255,3 @@ yarn start:dev
 ```
 
 Runs on: `http://localhost:3010`
-
-
-- **Frontend**  
-  <https://github.com/modonnell96/dts-developer-challenge-frontend>
-
-- **Backend**  
-  <https://github.com/modonnell96/dts-developer-challenge-backend>
